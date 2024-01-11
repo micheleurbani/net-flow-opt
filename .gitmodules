@@ -1,0 +1,3 @@
+[submodule "latex/net-flow-opt-latex"]
+	path = latex/net-flow-opt-latex
+	url = https://github.com/mikiurbi/net-flow-opt-latex.git
