@@ -17,7 +17,7 @@ class TrackPerformance(Callback):
         self.data["hv"] = []
 
     def notify(self, algorithm):
-        self.data["hv"].append(self.HV.do(algorithm.pop.get("F")))
+        self.data["hv"].append(self.HV.do(algorithm.pop.get("F")[:, :2]))
 
 
 if __name__ == '__main__':
