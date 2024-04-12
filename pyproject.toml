@@ -13,6 +13,9 @@ pymoo = "^0.6.0.1"
 pandas = "^2.0.3"
 plotly = "^5.16.1"
 nbformat = "^5.9.2"
+folium = "^0.15.1"
+geopandas = "^0.14.2"
+pytest = "^8.1.1"
 
 
 [tool.poetry.group.dev.dependencies]
