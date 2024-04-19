@@ -2,14 +2,17 @@
 DATA=data
 LATEX=net-flow-opt-latex
 
-cp $DATA/continuous_r*.csv $LATEX/$DATA
-cp $DATA/discrete_r*.csv $LATEX/$DATA
+algorithms=(continuous discrete hybrid)
 
-cp $DATA/continuous_hv_r*.csv $LATEX/$DATA
-cp $DATA/discrete_hv_r*.csv $LATEX/$DATA
+for al in "$algorithms[@]"; do
+    cp $DATA/$al_r*.csv $LATEX/$DATA
+    cp $DATA/$al_hv_r*.csv $LATEX/$DATA
+done
+
 
 # update repo
 cd $LATEX
+git pull
 git add $DATA
 git commit -m "Updated data."
 git push
