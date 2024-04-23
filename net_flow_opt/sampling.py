@@ -11,7 +11,6 @@ class GroupingStructureSampling(Sampling):
         val = np.zeros((n_samples, N), dtype=int)
         for ind in val:
             g_id = 1
-            # print(np.sum(val[i] == 0))
             while np.sum(ind == 0) > r:
                 # sample group size
                 g_size = np.random.randint(r)
@@ -20,6 +19,8 @@ class GroupingStructureSampling(Sampling):
                 # assigned sampled items to a group
                 ind[assigned] = g_id
                 g_id += 1
+            # assign remaining items to a new group
+            ind[ind == 0] = (g_id + 1)
         return val
 
 

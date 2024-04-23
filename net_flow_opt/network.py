@@ -211,7 +211,7 @@ class Plan:
 
     def _dates(self, grouping_structure):
         # rename shorter
-        gStr = grouping_structure
+        gStr = grouping_structure - np.min(grouping_structure)
         G = []
         for i in range(self.system.N):
             cmps = np.nonzero(gStr == i)[0]
